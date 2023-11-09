@@ -9,7 +9,7 @@
           {{item.nickName}}
         </a>
         <a v-else style="color: #8ce7ff;" >{{item.nickName}}:</a>
-        <span style="font-size: 15px;color: white">评论:{{item.content}}</span>
+        <span style="font-size: 15px;color: white;width: 38vh">评论:{{item.content}}</span>
       </div>
     </div>
   </div>
@@ -62,6 +62,7 @@ export default {
   margin: 2px;
   border-radius: 5px;
   overflow-y: auto;
+  overflow-x: hidden;
   width: 40vh;
   height: 58vh;
   background-color: #24252d;

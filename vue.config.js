@@ -35,7 +35,7 @@ const vueConfig = {
     assetsDir: 'static',
     runtimeCompiler: true,
     devServer: {
-        port: 80,
+        port: 8081,
         proxy: {
           //配置跨域
           '/barrage': {

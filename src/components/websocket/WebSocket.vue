@@ -2,16 +2,8 @@
   <div class="ai-report">
     <div style="display: flex;justify-content: center;flex-direction: column">
       <div style="display: flex;align-items: center;justify-content: center;flex-direction: column">
-        <div style="display: flex;justify-content: space-around">
-          <a href="http://www.softworld.vip" target="_blank">
-            <img :src="logo" width="40px" height="40px">
-          </a>
-          <input v-model="roomUrl" placeholder="请输入您的直播间链接" style="line-height: 28px; border-radius: 5px; width: 35vh; border-block-color: green;padding-left: 20px"/>
-          <button type="success" style="line-height: 30px;border-radius: 5px;padding-left: 10px;background-color: #4ed54e" @click="dealUrl">查询</button>
-        </div>
-
-<!--        <span style="color: black;font-size: 30px;color: #232623">房间动态</span>-->
-        <div style="width: 100%;height: 62vh;margin-top:10px;background-color: white;">
+        <ai-search @search="initWebSocket"></ai-search>
+        <div style="width: 100%;height: 62vh;margin-top:30px;background-color: white;">
           <div>
             <div>
               <ai-report-room ref="roomInfo"></ai-report-room>
@@ -28,7 +20,7 @@
             <ai-report-focus ref="focus"></ai-report-focus>
           </div>
           <div style="display: flex;justify-content: center;padding-top: 50px">
-            <a href="https://github.com/wanyushu" target="_blank">更多开源项目:https://github.com/wanyushu</a>
+            更多开源项目:<a href="https://github.com/wanyushu" target="_blank">https://github.com/wanyushu</a>
           </div>
 
         </div>
@@ -51,42 +43,23 @@ import AiReportGift from "@/components/report/ai-report-gift";
 import AiReportNice from "@/components/report/ai-report-nice";
 import AiReportEntrance from "@/components/report/ai-report-entrance";
 import AiReportComment from "@/components/report/ai-report-comment";
-import {getWssUrl} from "@/api/wssUrl";
-import {setRoomUrl} from "@/utils/auth";
-import logo from "@/asserts/logo.png"
+import AiSearch from "@/components/report/ai-search";
 export default {
   name: 'WebSocket',
-  components: {AiReportRoom, AiReportFocus, AiReportGift, AiReportNice, AiReportEntrance, AiReportComment},
+  components: {AiSearch, AiReportRoom, AiReportFocus, AiReportGift, AiReportNice, AiReportEntrance, AiReportComment},
   data() {
     return {
-      logo:logo,
       websocket: null,
       openHeart:null,
       closeHeart:null,
-      roomId:"2343243",
-      roomUrl:"",
     }
+  },
+  created() {
   },
   destroyed() {
     this.websocket.close()
   },
   methods: {
-    dealUrl(){
-      let param = {
-        roomUrl:this.roomUrl
-      }
-      getWssUrl(param).then((res)=>{
-        if(res.data.code===0){
-          this.initWebSocket(res.data.data)
-          let room=  {roomUrl:this.roomUrl}
-          setRoomUrl(room)
-          this.roomUrl=""
-        }else{
-          alert("系统异常:"+res.data.msg)
-        }
-      })
-
-    },
     initWebSocket(wsUrl) {
       this.websocket = new WebSocket(wsUrl);
       this.websocket.binaryType = config.wsBinaryType;
@@ -95,6 +68,7 @@ export default {
       this.websocket.onerror = this.webSocketError;
       this.websocket.onclose = this.webSocketClose;
     },
+
     webSocketOpen: function () {
       console.log("---------------WebSocket连接成功--------------")
       this.socketSendHeart();
