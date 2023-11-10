@@ -32,9 +32,12 @@
 
 # 4. 关于我们
    1.了解更多相关应用，请移步: http://www.softworld.vip，关注我们，了解最新更新动态！
-   扫码关注公众号
-   ![qrcode_for_gh_15b6b711cbca_258.jpg](https://cdn.nlark.com/yuque/0/2023/jpeg/35385809/1699605638736-8e429634-4a2b-47c4-99ca-f19acc9382be.jpeg#averageHue=%23a1a1a1&clientId=u887a6370-dc9a-4&from=paste&height=149&id=u0c131012&originHeight=258&originWidth=258&originalType=binary&ratio=1&rotation=0&showTitle=false&size=27449&status=done&style=shadow&taskId=u317baebc-cd55-4dc9-a3b4-c3300ec3d89&title=&width=149)
+   扫码关注公众号 "代码江湖"
 
+![qrcode_for_gh_15b6b711cbca_258.jpg](https://cdn.nlark.com/yuque/0/2023/jpeg/35385809/1699605638736-8e429634-4a2b-47c4-99ca-f19acc9382be.jpeg#averageHue=%23a1a1a1&clientId=u887a6370-dc9a-4&from=paste&height=149&id=u0c131012&originHeight=258&originWidth=258&originalType=binary&ratio=1&rotation=0&showTitle=false&size=27449&status=done&style=shadow&taskId=u317baebc-cd55-4dc9-a3b4-c3300ec3d89&title=&width=149)
+
+# 5.注意事项
+#本项目仅用学习参考用，切勿商用！
 
 
 
