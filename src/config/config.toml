@@ -1,0 +1,7 @@
+[system]
+    RoomUrl = "https://live.douyin.com/66308202558"
+    Port = 8888
+    IntervalSeconds = 5
+    Cors = true
+    Version=1.0
+    AppName="barrage-live"

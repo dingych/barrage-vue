@@ -1,8 +1,8 @@
 const path = require('path')
 
 // compression-webpack-plugin，添加压缩文件类型
-const CompressionWebpackPlugin = require('compression-webpack-plugin')
-const productionGzipExtensions = ['js', 'css']
+// const CompressionWebpackPlugin = require('compression-webpack-plugin')
+// const productionGzipExtensions = ['js', 'css']
 // const isProd = process.env.NODE_ENV === 'production'
 const isProd = false
 function resolve(dir) {
@@ -53,14 +53,14 @@ const vueConfig = {
         // webpack plugins
         plugins: [
             // 配置大文件压缩相关参数
-            new CompressionWebpackPlugin({
-                filename: '[path][base].gz',
-                algorithm: 'gzip',
-                test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
-                threshold: 10240,
-                minRatio: 0.8,
-                cache: false
-            }),
+            // new CompressionWebpackPlugin({
+            //     filename: '[path][base].gz',
+            //     algorithm: 'gzip',
+            //     test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
+            //     threshold: 10240,
+            //     minRatio: 0.8,
+            //     cache: false
+            // }),
         ],
 
         // if prod, add externals
