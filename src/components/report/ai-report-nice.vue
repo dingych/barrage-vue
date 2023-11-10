@@ -20,7 +20,7 @@ export default {
   data(){
     return{
       items: [],
-      maxLength: 1000,
+      maxLength: 100,
     }
   },
   created() {

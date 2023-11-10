@@ -21,7 +21,7 @@ export default {
   data(){
     return{
       items: [],
-      maxLength: 50000,
+      maxLength: 500,
     }
   },
   created() {
